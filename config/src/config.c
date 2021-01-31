@@ -10,11 +10,11 @@ int getStorageType()
 
     if (!file)
     {
-        // Close current file
-        fclose(file);
-
         // Create new file with binary standart
         updateStorageType(1);
+
+        // Reopens file
+        file = fopen("files/config.bin", "rb");
     }
 
     // Reads the file content and write into type variable
